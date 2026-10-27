@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="주워람 개인정보처리방침. 개인정보의 처리 목적, 보유 기간, 이용자의 권리와 문의처를 안내합니다.">
+  <meta name="theme-color" content="#f9635c">
+  <title>개인정보처리방침 | 주워람</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --coral: #f9635c;
+      --accent: #b33630;
+      --ink: #292724;
+      --body: #514c46;
+      --muted: #70675f;
+      --line: #e9e3dc;
+      --paper: #ffffff;
+      --canvas: #faf8f5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--body);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+      -webkit-text-size-adjust: 100%;
+    }
+    a { color: var(--accent); text-underline-offset: 4px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    .skip-link { position: absolute; top: -100px; left: 16px; z-index: 2; padding: 8px 16px; background: var(--paper); }
+    .skip-link:focus { top: 12px; }
+    .shell { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+    .masthead { border-bottom: 1px solid var(--line); }
+    .masthead-inner { display: flex; align-items: center; gap: 16px; min-height: 84px; }
+    .brand { color: var(--accent); font-weight: 900; font-size: 25px; letter-spacing: -1.2px; }
+    .masthead-label { color: var(--muted); font-size: 13px; padding-left: 16px; border-left: 1px solid var(--line); }
+    .hero { padding-block: 48px 36px; }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+    h1 { margin: 0; color: var(--ink); font-size: clamp(28px, 4vw, 40px); line-height: 1.4; letter-spacing: -1.8px; }
+    .effective-date { display: inline-block; margin: 16px 0 0; padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); font-size: 13px; font-weight: 600; }
+    .layout { display: grid; grid-template-columns: 252px minmax(0, 1fr); align-items: start; gap: 32px; padding-bottom: 56px; }
+    .toc { position: sticky; top: 24px; border-top: 2px solid var(--coral); padding-top: 16px; }
+    .toc-title { margin: 0 0 12px; color: var(--ink); font-weight: 700; font-size: 14px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; }
+    .toc li { margin-bottom: 3px; }
+    .toc a { display: block; padding: 6px 0; color: var(--body); text-decoration: none; font-size: 13px; line-height: 1.6; }
+    .toc a:hover { color: var(--accent); text-decoration: underline; }
+    article { min-width: 0; padding: 32px 36px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+    .intro { margin: 0 0 32px; padding: 20px 22px; background: #fff3ef; border-left: 3px solid var(--coral); border-radius: 0 8px 8px 0; }
+    section + section { margin-top: 32px; padding-top: 30px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 16px; color: var(--ink); font-size: 19px; line-height: 1.6; letter-spacing: -.5px; }
+    h3 { margin: 22px 0 10px; color: var(--ink); font-size: 16px; font-weight: 700; }
+    p { margin: 0 0 12px; }
+    section > :last-child { margin-bottom: 0; }
+    ul { margin: 8px 0 16px; padding-left: 22px; }
+    li { padding-left: 2px; margin-block: 6px; }
+    li::marker { color: var(--muted); }
+    strong { color: var(--ink); }
+    footer { border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 24px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 800px) {
+      .shell { width: min(680px, calc(100% - 40px)); }
+      .masthead-inner { min-height: 72px; }
+      .hero { padding-block: 32px 24px; }
+      .layout { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-bottom: 32px; }
+      .toc { position: static; }
+      .toc ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+      article { padding: 24px; }
+    }
+    @media (max-width: 420px) {
+      body { font-size: 15px; }
+      .shell { width: calc(100% - 32px); }
+      article { padding: 24px 20px; }
+      .intro { padding: 16px; }
+      .toc ol { grid-template-columns: minmax(0, 1fr); }
+      .toc a { padding-block: 7px; }
+      h2 { font-size: 18px; }
+      .masthead-label { font-size: 12px; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; color: black; }
+      .shell { width: 100%; }
+      .hero { padding-block: 20px; }
+      .toc, .skip-link, .footer-inner a { display: none; }
+      .layout { display: block; }
+      article { border: 0; padding: 0; }
+      h2, h3 { break-after: avoid; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#policy">본문 바로가기</a>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <span class="brand">주워람</span>
+      <span class="masthead-label">약관 및 정책</span>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="hero">
+      <p class="eyebrow">PRIVACY POLICY</p>
+      <h1>개인정보처리방침</h1>
+      <p class="effective-date">시행일&nbsp; 10/15</p>
+    </div>
+    <div class="layout">
+      <nav class="toc" aria-label="개인정보처리방침 목차">
+        <p class="toc-title">목차</p>
+        <ol>
+<li><a href="#section-1">1. 개인정보의 처리 목적 및 항목</a></li>
+<li><a href="#section-2">2. 개인정보의 보유 및 이용 기간</a></li>
+<li><a href="#section-3">3. 개인정보의 파기 절차 및 방법</a></li>
+<li><a href="#section-4">4. 개인정보의 제3자 제공</a></li>
+<li><a href="#section-5">5. 개인정보 처리업무의 위탁</a></li>
+<li><a href="#section-6">6. 개인정보의 국외 이전</a></li>
+<li><a href="#section-7">7. 위치정보의 처리</a></li>
+<li><a href="#section-8">8. 이용자의 권리와 행사 방법</a></li>
+<li><a href="#section-9">9. 개인정보의 안전성 확보조치</a></li>
+<li><a href="#section-10">10. 개인정보 보호책임자 및 문의처</a></li>
+<li><a href="#section-11">11. 개인정보처리방침의 변경</a></li>
+        </ol>
+      </nav>
+      <article id="policy" aria-label="개인정보처리방침 본문">
+        <p class="intro">주워람(이하 “서비스”)은 이용자의 개인정보를 소중하게 보호하며, 관련 법령에 따라 개인정보를 처리하고 안전하게 관리하기 위해 노력합니다.</p>
+<section id="section-1" aria-labelledby="heading-1">
+<h2 id="heading-1">1. 개인정보의 처리 목적 및 항목</h2>
+<p>서비스는 다음 목적을 위해 개인정보를 처리합니다.</p>
+<h3>1) Google 로그인 및 회원 관리</h3>
+<ul>
+<li>목적: 회원 식별, 로그인 처리, 회원 서비스 제공 및 계정 관리</li>
+<li>처리 항목: Google 계정 식별자, 이메일 주소, 이름 및 프로필 정보 중 실제로 제공받아 저장하는 항목</li>
+<li>보유 기간: 회원 탈퇴 시까지. 단, 관계 법령에 따라 보존해야 하는 경우 해당 기간 동안 보관합니다.</li>
+</ul>
+<h3>2) 관심 브랜드 및 추천 기능 제공</h3>
+<ul>
+<li>목적: 이용자가 선택한 관심 정보 저장 및 맞춤형 서비스 제공</li>
+<li>처리 항목: 관심 브랜드, 관심 카테고리, 추천 관련 정보 및 서비스 이용 과정에서 생성·저장되는 관련 정보</li>
+<li>보유 기간: 이용자가 삭제하거나 회원 탈퇴할 때까지. 단, 기기 내부에만 저장되는 정보는 앱 데이터 삭제 또는 앱 삭제 등에 따라 사라질 수 있습니다.</li>
+</ul>
+<h3>3) 서비스 운영 및 오류 대응</h3>
+<ul>
+<li>목적: 서비스 안정성 확보, 오류 확인 및 부정 이용 방지</li>
+<li>처리 항목: 실제로 수집하는 경우 접속 기록, 오류 기록, 기기 및 앱 관련 정보</li>
+<li>보유 기간: 수집일로부터 30일간 보관 후 자동 삭제합니다.</li>
+</ul>
+</section>
+<section id="section-2" aria-labelledby="heading-2">
+<h2 id="heading-2">2. 개인정보의 보유 및 이용 기간</h2>
+<p>서비스는 개인정보의 처리 목적이 달성되거나 회원이 탈퇴하는 경우 해당 개인정보를 지체 없이 파기합니다. 다만, 관계 법령에 따라 보존할 필요가 있는 개인정보는 해당 법령에서 정한 기간 동안 보관합니다.</p>
+<p>구체적인 보유 기간은 실제 서비스 운영 및 데이터 저장 정책에 따라 적용합니다.</p>
+</section>
+<section id="section-3" aria-labelledby="heading-3">
+<h2 id="heading-3">3. 개인정보의 파기 절차 및 방법</h2>
+<p>서비스는 개인정보의 보유 기간이 지나거나 처리 목적이 달성된 개인정보를 지체 없이 파기합니다.</p>
+<ul>
+<li>전자적 파일: 복구할 수 없는 방법으로 삭제합니다.</li>
+<li>종이 문서: 해당하는 경우 분쇄 또는 소각 등의 방법으로 파기합니다.</li>
+</ul>
+<p>백업 데이터 및 접속 기록의 파기 방식과 기간은 실제 운영 정책에 따릅니다.</p>
+</section>
+<section id="section-4" aria-labelledby="heading-4">
+<h2 id="heading-4">4. 개인정보의 제3자 제공</h2>
+<p>서비스는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 이용자의 동의가 있거나 법령에 근거가 있는 경우에는 관련 법령에 따라 제공할 수 있습니다.</p>
+<p>Google 로그인 및 서비스 운영 과정에서 제3자가 개인정보를 처리하는 경우, 실제 처리 관계와 제공 여부를 확인하여 관련 내용을 별도로 안내합니다.</p>
+</section>
+<section id="section-5" aria-labelledby="heading-5">
+<h2 id="heading-5">5. 개인정보 처리업무의 위탁</h2>
+<p>서비스는 원활한 서비스 제공을 위해 외부 업체의 서비스를 이용할 수 있습니다. 실제로 개인정보 처리를 위탁하는 업체가 있는 경우 업체명, 위탁 업무 및 관련 사항을 확인하여 공개합니다.</p>
+<p>현재 이용 중인 인증·서버·데이터베이스·분석 관련 서비스와 각 업체의 개인정보 처리 역할은 출시 전에 확인하여 반영합니다.</p>
+</section>
+<section id="section-6" aria-labelledby="heading-6">
+<h2 id="heading-6">6. 개인정보의 국외 이전</h2>
+<p>서비스는 개인정보의 국외 이전 여부와 관련하여 이용 중인 외부 서비스의 데이터 저장 위치, 처리 업체 및 이전 구조를 확인하고 관련 법령에 따라 필요한 사항을 공개합니다.</p>
+<p>국외 이전이 확인되는 경우 이전되는 개인정보 항목, 이전 국가, 이전 시기 및 방법, 이전받는 자, 이용 목적과 보유 기간 등 법령상 필요한 사항을 구체적으로 안내합니다.</p>
+</section>
+<section id="section-7" aria-labelledby="heading-7">
+<h2 id="heading-7">7. 위치정보의 처리</h2>
+<p>서비스가 주변 매장 검색 등의 기능을 위해 기기의 위치정보를 이용하는 경우, 실제 이용 목적과 처리 방식에 따라 필요한 권한을 요청하고 관련 사항을 안내합니다.</p>
+<p>위치정보의 수집·저장·서버 전송 여부 및 보유 기간은 실제 구현 내용을 기준으로 공개합니다. 위치정보를 처리하지 않는 경우에는 본 항목을 해당 사실에 맞게 수정합니다.</p>
+</section>
+<section id="section-8" aria-labelledby="heading-8">
+<h2 id="heading-8">8. 이용자의 권리와 행사 방법</h2>
+<p>이용자는 관련 법령에 따라 자신의 개인정보에 대한 열람, 정정, 삭제 및 처리정지를 요청할 수 있습니다. 회원 탈퇴 및 개인정보 삭제 요청은 서비스에서 제공하는 기능 또는 아래 문의처를 통해 요청할 수 있습니다.</p>
+<p>서비스는 요청 내용을 확인한 후 관련 법령에 따라 필요한 조치를 진행합니다. 다만, 법령상 보존 의무가 있는 정보는 해당 기간 동안 보관될 수 있습니다.</p>
+</section>
+<section id="section-9" aria-labelledby="heading-9">
+<h2 id="heading-9">9. 개인정보의 안전성 확보조치</h2>
+<p>서비스는 개인정보가 분실·도난·유출·위조·변조 또는 훼손되지 않도록 접근 권한 관리, 전송 구간 보호, 인증 정보 관리 등 실제 적용되는 기술적·관리적 보호조치를 시행합니다.</p>
+<p>구체적인 보호조치는 서비스의 실제 운영 환경에 맞게 적용합니다.</p>
+</section>
+<section id="section-10" aria-labelledby="heading-10">
+<h2 id="heading-10">10. 개인정보 보호책임자 및 문의처</h2>
+<ul>
+<li>운영 주체: 개인</li>
+<li>서비스명: 주워람</li>
+<li><strong>개인정보 관련 문의: </strong><a href="mailto:zuworamhelp@gmail.com">zuworamhelp@gmail.com</a></li>
+</ul>
+<p>이용자는 개인정보 처리와 관련한 문의, 불만 처리 및 피해 구제를 위 문의처를 통해 요청할 수 있습니다.</p>
+</section>
+<section id="section-11" aria-labelledby="heading-11">
+<h2 id="heading-11">11. 개인정보처리방침의 변경</h2>
+<p>본 개인정보처리방침의 내용이 변경되는 경우 서비스 내 공지 또는 적절한 방법을 통해 안내합니다.</p>
+</section>
+      </article>
+    </div>
+  </main>
+  <footer>
+    <div class="shell footer-inner">
+      <span>주워람</span>
+      <a href="#top">맨 위로</a>
+    </div>
+  </footer>
+</body>
+</html>

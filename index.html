@@ -33,7 +33,7 @@
     }
     a { color: var(--accent); text-underline-offset: 4px; }
     a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
     .skip-link { position: absolute; top: -100px; left: 16px; z-index: 2; padding: 8px 16px; background: var(--paper); }
     .skip-link:focus { top: 12px; }
     .shell { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
@@ -51,8 +51,13 @@
     .deletion-panel ol { padding-left: 24px; }
     .deletion-panel ol li { margin-block: 10px; }
     .deletion-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-block: 20px 12px; }
-    .deletion-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 20px; border-radius: 8px; background: var(--accent); color: white; font-weight: 700; text-decoration: none; text-align: center; }
+    .deletion-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 20px; border: 1px solid var(--accent); border-radius: 8px; background: var(--accent); color: white; font: inherit; font-weight: 700; text-decoration: none; text-align: center; cursor: pointer; }
     .deletion-button:hover { background: #902a25; text-decoration: none; }
+    .deletion-button-secondary { background: var(--paper); color: var(--accent); }
+    .deletion-button-secondary:hover { background: #fff3ef; }
+    .deletion-button[hidden] { display: none; }
+    .deletion-copy-fallback input { display: block; width: 100%; max-width: 360px; margin-top: 6px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--paper); font: inherit; }
+    .deletion-copy-status:empty { display: none; }
     .deletion-help { color: var(--muted); font-size: 13px; }
     .deletion-notice { margin-top: 20px; padding: 16px 18px; border: 1px solid #eadbb7; border-radius: 8px; background: #fff9ed; }
     .deletion-notice strong { display: block; margin-bottom: 4px; }
@@ -142,10 +147,17 @@
         <li>본문에 서비스명 <strong>주워람</strong>, 가입 이메일 주소, 삭제를 요청하는 내용을 적어 전송합니다.</li>
       </ol>
       <div class="deletion-actions">
-        <a class="deletion-button" href="mailto:zuworamhelp@gmail.com?subject=%EC%A3%BC%EC%9B%8C%EB%9E%8C%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD&amp;body=%EC%84%9C%EB%B9%84%EC%8A%A4%EB%AA%85%3A%20%EC%A3%BC%EC%9B%8C%EB%9E%8C%0A%EA%B0%80%EC%9E%85%ED%95%9C%20Google%20%EA%B3%84%EC%A0%95%20%EC%9D%B4%EB%A9%94%EC%9D%BC%3A%20%0A%EC%9A%94%EC%B2%AD%20%EB%82%B4%EC%9A%A9%3A%20%EC%A3%BC%EC%9B%8C%EB%9E%8C%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%EB%A5%BC%20%EC%9A%94%EC%B2%AD%ED%95%A9%EB%8B%88%EB%8B%A4.%0A%0A%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%82%98%20%EC%9D%B8%EC%A6%9D%EB%B2%88%ED%98%B8%EB%8A%94%20%EC%A0%81%EC%A7%80%20%EB%A7%88%EC%84%B8%EC%9A%94.">이메일로 계정 삭제 요청</a>
-        <a href="mailto:zuworamhelp@gmail.com">zuworamhelp@gmail.com</a>
+        <a class="deletion-button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zuworamhelp%40gmail.com&amp;su=%EC%A3%BC%EC%9B%8C%EB%9E%8C%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD&amp;body=%EC%84%9C%EB%B9%84%EC%8A%A4%EB%AA%85%3A%20%EC%A3%BC%EC%9B%8C%EB%9E%8C%0A%EA%B0%80%EC%9E%85%ED%95%9C%20Google%20%EA%B3%84%EC%A0%95%20%EC%9D%B4%EB%A9%94%EC%9D%BC%3A%20%0A%EC%9A%94%EC%B2%AD%20%EB%82%B4%EC%9A%A9%3A%20%EC%A3%BC%EC%9B%8C%EB%9E%8C%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%EB%A5%BC%20%EC%9A%94%EC%B2%AD%ED%95%A9%EB%8B%88%EB%8B%A4.%0A%0A%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%82%98%20%EC%9D%B8%EC%A6%9D%EB%B2%88%ED%98%B8%EB%8A%94%20%EC%A0%81%EC%A7%80%20%EB%A7%88%EC%84%B8%EC%9A%94." target="_blank" rel="noopener noreferrer">Gmail에서 작성<span class="deletion-help" style="color: inherit; margin-left: 6px;">(새 탭)</span></a>
+        <a class="deletion-button deletion-button-secondary" href="mailto:zuworamhelp@gmail.com?subject=%EC%A3%BC%EC%9B%8C%EB%9E%8C%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD&amp;body=%EC%84%9C%EB%B9%84%EC%8A%A4%EB%AA%85%3A%20%EC%A3%BC%EC%9B%8C%EB%9E%8C%0A%EA%B0%80%EC%9E%85%ED%95%9C%20Google%20%EA%B3%84%EC%A0%95%20%EC%9D%B4%EB%A9%94%EC%9D%BC%3A%20%0A%EC%9A%94%EC%B2%AD%20%EB%82%B4%EC%9A%A9%3A%20%EC%A3%BC%EC%9B%8C%EB%9E%8C%20%EA%B3%84%EC%A0%95%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%EB%A5%BC%20%EC%9A%94%EC%B2%AD%ED%95%A9%EB%8B%88%EB%8B%A4.%0A%0A%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%82%98%20%EC%9D%B8%EC%A6%9D%EB%B2%88%ED%98%B8%EB%8A%94%20%EC%A0%81%EC%A7%80%20%EB%A7%88%EC%84%B8%EC%9A%94.">메일 앱에서 작성</a>
+        <button class="deletion-button deletion-button-secondary" id="copy-email-button" type="button" hidden>이메일 주소 복사</button>
       </div>
-      <p class="deletion-help">버튼을 누르면 메일 작성 화면이 열립니다. 내용을 확인하고 직접 전송해 주세요. 메일 앱이 열리지 않으면 위 주소를 복사해 이용하는 메일 서비스에서 보내면 됩니다.</p>
+      <p><a href="mailto:zuworamhelp@gmail.com">zuworamhelp@gmail.com</a></p>
+      <p class="deletion-help deletion-copy-status" id="copy-email-status" role="status" aria-live="polite"></p>
+      <div class="deletion-copy-fallback" id="copy-email-fallback" hidden>
+        <label for="request-email">아래 이메일 주소를 선택해 직접 복사해 주세요.</label>
+        <input id="request-email" type="text" value="zuworamhelp@gmail.com" readonly>
+      </div>
+      <p class="deletion-help">Gmail에서 작성은 브라우저에서 Gmail 작성 화면을 엽니다. 로그인이 필요할 수 있으니 주워람 가입에 사용한 Google 계정인지 확인해 주세요. 메일 앱에서 작성은 기본 메일 앱을 엽니다. 받는 사람·제목·본문을 확인하고 가입 이메일 주소를 채운 뒤 직접 전송해 주세요. 작성 화면이 열리지 않으면 이메일 주소를 복사해 이용하는 메일 서비스에서 보내면 됩니다.</p>
       <p class="deletion-help">비밀번호나 일회용 인증번호는 보내지 마세요. 가입 이메일을 사용할 수 없는 경우 같은 문의처로 계정 접근이 어려운 상황을 알려 주세요.</p>
       <h3>2. 앱에서 삭제 요청하기</h3>
       <p>주워람 앱의 <strong>내 정보 → 계정 탈퇴</strong>에서 안내를 확인하고 요청할 수 있습니다. 앱을 삭제하는 것만으로 계정 삭제가 요청되지는 않습니다.</p>
@@ -278,5 +290,28 @@
       <a href="#top">맨 위로</a>
     </div>
   </footer>
+  <script>
+    (() => {
+      const copyButton = document.getElementById('copy-email-button');
+      const status = document.getElementById('copy-email-status');
+      const fallback = document.getElementById('copy-email-fallback');
+      const email = document.getElementById('request-email');
+
+      copyButton.hidden = false;
+      copyButton.addEventListener('click', async () => {
+        status.textContent = '';
+        try {
+          await navigator.clipboard.writeText(email.value);
+          fallback.hidden = true;
+          status.textContent = '이메일 주소를 복사했습니다.';
+        } catch {
+          fallback.hidden = false;
+          email.focus();
+          email.select();
+          status.textContent = '자동 복사를 사용할 수 없습니다. 선택된 이메일 주소를 직접 복사해 주세요.';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
